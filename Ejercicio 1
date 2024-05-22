@@ -1,0 +1,39 @@
+// para otra secuencia solo de debe cambiar el termino como es para ^3
+def truncar_a_tres_cifras_significativas(valor):
+    format_str = '%.' + str(3) + 'g'
+    return float(format_str % valor)
+
+# Inicializar la sumatoria en 0
+sumatoria = 0
+
+for i in range(1, 11):
+    termino = 1 / (i ** 2)
+    termino_truncado = truncar_a_tres_cifras_significativas(termino)
+    print(f"Término {i}: {termino_truncado:.5e}")
+    sumatoria += termino_truncado
+
+
+sumatoria_truncada = truncar_a_tres_cifras_significativas(sumatoria)
+
+print(f"La sumatoria truncada desde 1 hasta 10 de 1/i^2 es: {sumatoria_truncada:.5e}")
+
+
+///////////////////////////////////////// redondeo ////////////////////////////////////
+
+def redondear_a_tres_cifras_significativas(valor):
+    
+    return round(valor, 3)
+
+# Inicializar la sumatoria en 0
+sumatoria = 0
+
+for i in range(1, 11):
+    termino = 1 / (i ** 3)
+    termino= redondear_a_tres_cifras_significativas(termino)
+    print(f"Término {i}: {termino:.5e}")
+    sumatoria += termino
+
+
+sumatoria_redondeada = redondear_a_tres_cifras_significativas(sumatoria)
+
+print(f"La sumatoria redondeada desde 1 hasta 10 de 1/i^2 es: {sumatoria_redondeada:.5e}")
